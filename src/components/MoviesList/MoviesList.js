@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from "react-router-dom";
-import { Container, CardWrapper } from "./MoviesList.styled";
+import { Container } from "./MoviesList.styled";
 
 export const MoviesList = ({ movies }) => {
   const location = useLocation();
@@ -8,11 +8,11 @@ export const MoviesList = ({ movies }) => {
   return (
     <Container>
       {movies.map((movie) => (
-        <CardWrapper key={movie.id}>
+        <li key={movie.id}>
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
             {movie.title}
           </Link>
-        </CardWrapper>
+        </li>
       ))}
     </Container>
   );
