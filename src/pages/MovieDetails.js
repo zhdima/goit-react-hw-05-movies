@@ -42,7 +42,7 @@ const MovieDetails = () => {
   return (
     <main>
       <BackLink to={backLinkRef.current}><HiArrowLeft size="12" />Go back</BackLink>
-      <br/>
+      
       {details && <MovieInfo info={details} />}
       {status === Status.LOADING && <Loader />}
       {status === Status.ERROR && <ErrorInfo>{error}</ErrorInfo>}
